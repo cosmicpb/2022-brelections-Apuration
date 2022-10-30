@@ -1,5 +1,6 @@
 import requests
 import time
+import csv
 from datetime import datetime
 from jsonpath_rw import parse
 import gui
@@ -43,7 +44,7 @@ while(True):
 
         
 
-        print(nome1[0].value + ' ' + str(bolso[0].value) + ' votos || ' + str(bolsoP[0].value) + ' %       ' + str(bolsoDif))
+        print(nome1[0].value + ' ' + str(bolso[0].value) + ' votos || ' + str(bolsoP[0].value) + ' %     Dif(%): ' + str(bolsoDif))
 
 
 
@@ -66,9 +67,14 @@ while(True):
 
 
 
-        print(nome2[0].value + ' ' + str(lula[0].value) + ' votos || ' + str(lulaP[0].value) + ' %       ' + str(lulaDif))
-
+        print(nome2[0].value + ' ' + str(lula[0].value) + ' votos || ' + str(lulaP[0].value) + ' %     Dif(%): ' + str(lulaDif))
+        dif = lulaAtual - bolsoAtual
+        fields = [datetime.now(), perc[0].value, dif, nome1[0].value, nome2[0].value, bolso[0].value, lula[0].value, bolsoP[0].value, lulaP[0].value, bolsoDif, lulaDif]
+        with open(r'apuracao.csv', 'a', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(fields)
         print('Diferença: ' + str(lulaAtual - bolsoAtual))
+        
 
         time.sleep(10)
 
