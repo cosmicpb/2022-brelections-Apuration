@@ -5,6 +5,7 @@ from datetime import datetime
 from jsonpath_rw import parse
 import gui
 
+
 lulaAtual = 0
 bolsoAtual = 0
 bolsoDif = 0
@@ -23,7 +24,7 @@ while(True):
 
         percent = parse('$.pst')
         perc = percent.find(respJson)
-        print(str(perc[0].value) + ' %')
+        print(str(perc[0].value) + ' % de urnas apuradas')
 
 
         bVotosJson = parse('$.cand[1].vap')
