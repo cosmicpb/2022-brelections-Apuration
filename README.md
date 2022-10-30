@@ -41,6 +41,8 @@ Developed by Paulo Baldacim Junior
 https://www.linkedin.com/in/paulobaldacimjunior/
 https://twitter.com/memory_heap
 
+**Free ASSANGE**
+**Free Snowden**
 **Free Software, Hell Yeah!**
 
 
