@@ -2,12 +2,13 @@ import requests
 import time
 from datetime import datetime
 from jsonpath_rw import parse
+import gui
 
 lulaAtual = 0
 bolsoAtual = 0
 bolsoDif = 0
 lulaDif = 0
-
+gui.hellogui()
 
 while(True):
     req = requests.get('https://resultados.tse.jus.br/oficial/ele2022/545/dados-simplificados/br/br-c0001-e000545-r.json')
