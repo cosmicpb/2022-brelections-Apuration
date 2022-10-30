@@ -9,6 +9,7 @@ lulaAtual = 0
 bolsoAtual = 0
 bolsoDif = 0
 lulaDif = 0
+total = 155756933
 gui.hellogui()
 
 while(True):
@@ -37,6 +38,11 @@ while(True):
 
 
         if(bolsoAtual != bolsoAnterior):
+            print("""
+            
+            
+            
+            """)
             print('MUDANÇA:')
 
             bolsoDif = bolsoAnterior - bolsoAtual
@@ -58,7 +64,8 @@ while(True):
         lulaAnterior = float(lulaP[0].value.replace(',','.'))
 
         if(lulaAtual != lulaAnterior):
-            print('MUDANÇA:')
+
+            print('MUDANÇA: ################################################')
 
             
             lulaDif = lulaAnterior - lulaAtual
@@ -74,6 +81,10 @@ while(True):
             writer = csv.writer(f)
             writer.writerow(fields)
         print('Diferença: ' + str(lulaAtual - bolsoAtual))
+
+        if((int(bolso[0].value) - int(lula[0].value)) > (total - (int(bolso[0].value) + int(lula[0].value)))):
+            while(True):
+                print(nome2[0].value + '   VENCEUU!!')
         
 
         time.sleep(10)
